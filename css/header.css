@@ -1,0 +1,178 @@
+header{
+    width: 100vw;
+    height: 80px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header{
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.logo img{
+    height: 120px;
+}
+
+nav{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+nav a{
+    font-family: 'Montserrat', sans-serif;
+    text-decoration: none;
+    color: #0F2A48;
+    margin: 0 5px;
+}
+
+nav a div{
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10px;
+    position: relative;
+}
+
+nav a div::before,
+nav a div::after{
+    content: "";
+    position: absolute;
+    bottom: 25px;
+    right: 5px;
+    width: 0;
+    height: 1px;
+    background: #0F2A48;
+    transition: 0.4s ease;
+}
+
+nav a div::before{
+    left: 5px;
+}
+
+nav a div:hover::before,
+nav a div:hover::after{
+    width: 50%;
+}
+
+.separator{
+    width: 1px;
+    height: 16px;
+    background: #0F2A48;
+    margin: 0 20px;
+}
+
+.menu-container{
+    display: none;
+}
+
+@media (max-width: 900px) {
+    header{
+        justify-content: space-between;
+        padding: 0 20px;
+    }
+
+    nav{
+        flex-direction: column;
+        position: absolute;
+        top: 80px;
+        right: -100%;
+        background-color: rgb(255, 255, 255);
+        transition-duration: 0.5s;
+        min-width: 200px;
+    }
+
+    nav.open{
+        right: 0;
+    }
+
+    nav a{
+        width: 100%;
+    }
+
+    nav a:hover{
+        background-color: #eee;
+    }
+
+    nav a div:hover::before,
+    nav a div:hover::after{
+        display: none;
+    }
+
+    .separator{
+        width: 100px;
+        height: 1px;
+        margin: 20px 0;
+    }
+
+    .menu-container{
+        display: flex;
+        width: 50px;
+        height: 50px;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+
+    .menu-container:hover{
+        background-color: #0F2A48;
+    }
+
+    .menu-container:hover .menu,
+    .menu-container:hover .menu::after,
+    .menu-container:hover .menu::before{
+        background: #fff;
+    }
+
+    .menu-container:hover .menu.opened{
+        background: #ffffff00;
+    }
+
+    .menu,
+    .menu::after,
+    .menu::before{
+        width: 25px;
+        height: 1px;
+        background-color: #0F2A48;
+        transition-duration: 0.5s;
+    }
+
+    .menu{
+        position: relative;
+    }
+
+    .menu::after{
+        content: "";
+        position: absolute;
+        top: 5px;
+    }
+
+    .menu::before{
+        content: "";
+        position: absolute;
+        top: -5px;
+    }
+
+    .menu.opened{
+        background-color: #0f2a4800;
+    }
+
+    .menu.opened::after{
+        top: 0;
+        transform: rotate(45deg);
+    }
+
+    .menu.opened::before{
+        top: 0;
+        transform: rotate(-45deg);
+    }
+}

@@ -1,0 +1,162 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 62.5%;
+}
+
+.main{
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.flex-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-spaceBetween{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.wrap{
+    flex-wrap: wrap;
+}
+
+.full{
+    width: 100%;
+    min-height: 100vh;
+}
+
+.flex-column-center{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+}
+
+.heroImage img{
+    height: 60vh;
+}
+
+.heroImage{
+    position: absolute;
+    right: 0;
+    z-index: -1;
+}
+
+.title{
+    margin: 10px 0;
+    color: #0F2A48;
+    font-weight: 300;
+}
+
+.left-side{
+    margin-left: 30px;
+    max-width: 550px;
+}
+
+.button{
+    text-decoration: none;
+    padding: 10px;
+    color: white;
+    background: #0F2A48;
+    border-radius: 5px;
+}
+
+.line{
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.block,
+.line img{
+    flex: 1;
+    min-width: 400px;
+    min-height: 50vh;
+}
+
+.line img{
+    object-fit: cover;
+    max-height: 50vh;
+}
+
+.block{
+    background-color: #eee;
+}
+
+.block div{
+    padding: 30px;
+}
+
+.wrap-reverse{
+    flex-wrap: wrap-reverse;
+}
+
+
+@media (max-width: 1000px) {
+    .heroImage img{
+        height: 100vh;
+        width: 100vw;
+        object-fit: cover;
+    }
+    .heroImage::after{
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+    .title{
+        color: white;
+    }
+}
+
+
+@media (max-width: 400px){
+    .block{
+        min-width: 260px;
+    }
+}
+ 
+
+@media (min-width: 320px) {
+    html{
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 576px) {
+    html{
+        font-size: 18px;
+    }
+}
+
+@media (min-width: 768px) {
+    html{
+        font-size: 18px;
+    }
+}
+
+@media (min-width: 992px) {
+    html{
+        font-size: 18px;
+    }
+}
+
+@media (min-width: 1200px) {
+    html{
+        font-size: 20px;
+    }
+}
